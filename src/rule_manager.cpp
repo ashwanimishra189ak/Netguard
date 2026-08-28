@@ -153,9 +153,10 @@ bool RuleManager::isDomainBlocked(const std::string& domain) const {
     std::shared_lock<std::shared_mutex> lock(domain_mutex_);
     
     // Check exact match
-    if (blocked_domains_.count(domain) > 0) {
+    for (const auto& blocked : blocked_domains_) {
+    if (domain.find(blocked) != std::string::npos)
         return true;
-    }
+}
     
     // Check patterns
     std::string lower_domain = domain;
