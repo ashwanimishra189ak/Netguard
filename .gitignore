@@ -1,0 +1,18 @@
+# Build directory
+build/
+
+# Compiled executables
+dpi_engine
+packet_analyzer
+dpi_simple
+
+# Generated packet captures
+*.pcap
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+
